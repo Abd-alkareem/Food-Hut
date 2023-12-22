@@ -1,0 +1,798 @@
+:root {
+    --color-red: #ff214f;
+    --color-dark: #343a40;
+    --tr-3: 0.3s;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*  */
+body {
+    position: relative;
+}
+
+body::-webkit-scrollbar {
+    background-color: var(--color-red);
+    color: var(--color-red);
+}
+
+/*  */
+
+/* start main-sections */
+.main-section {
+    min-height: 115vh;
+    background: url(../imgs/main.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.main-section::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #333333bf;
+    z-index: 1;
+}
+
+
+.main-section header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: var(--tr-3);
+    z-index: 1000000;
+}
+
+.main-section header.back-black {
+    background-color: var(--color-dark);
+    padding: 5px 20px;
+    transition: var(--tr-3);
+    border-bottom: 1px solid gray;
+}
+
+.main-section header.force-black {
+    background-color: var(--color-dark) !important;
+}
+
+@media(max-width:991px) {
+    .main-section header {
+        flex-wrap: wrap;
+    }
+}
+
+.main-section header>i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    order: -1;
+    cursor: pointer;
+}
+
+.main-section header>i:hover {
+    box-shadow: 1px 1px 3px 0 white;
+}
+
+@media(min-width:992px) {
+    .main-section header>i {
+        display: none;
+    }
+}
+
+
+
+.main-section header ul {
+    display: flex;
+    align-items: center;
+    transition: var(--tr-3);
+}
+
+
+
+@media(max-width:991px) {
+    .main-section header ul {
+        flex-direction: column;
+        order: 2;
+        width: 50%;
+        overflow: hidden;
+        gap: 22px;
+        padding-bottom: 20px;
+        height: 201px;
+    }
+
+    .main-section header ul.h-0 {
+        height: 0;
+        padding: 0;
+        transition: var(--tr-3);
+    }
+}
+
+@media(max-width:577px) {
+    .main-section header ul {
+        width: 100%;
+        margin-top: -10px;
+    }
+}
+
+.main-section header ul li a {
+    color: white;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: var(--tr-3);
+    text-transform: capitalize;
+}
+
+.main-section header ul li a.active,
+.main-section header ul li a:hover {
+    color: var(--color-red);
+}
+
+.main-section header ul li a.componunts {
+    margin-right: 0;
+    width: 120px;
+    display: block;
+    height: 40px;
+    background-color: var(--color-red);
+    text-align: center;
+    line-height: 2;
+    border-radius: 5px;
+}
+
+.main-section header ul li a.componunts:hover {
+    color: #333;
+}
+
+.main-section header .logo {}
+
+@media(max-width:991px) {
+    .main-section header .logo {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+.main-section header .logo .img {
+    width: 150px;
+    height: 100px;
+    background-image: url(../imgs/food-hut-logo.png);
+    background-size: cover;
+}
+
+.main-section .landing {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 150px;
+    z-index: 3;
+    position: relative;
+}
+
+.main-section .landing span {
+    color: white;
+    font-weight: bold;
+    font-size: 90px;
+    text-align: center;
+}
+
+.main-section .landing p {
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+}
+
+.main-section .landing button {
+    background-color: var(--color-red);
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+/* end main-sections */
+
+/* start about-section */
+
+.about-section .holder {
+    display: flex;
+
+}
+
+@media(max-width:767px) {
+    .about-section .holder {
+        flex-direction: column;
+    }
+}
+
+.about-section .holder .half:first-child {
+    min-height: 100vh;
+    width: 50%;
+    background-image: url(../imgs/about-section.jpg);
+    background-size: cover;
+}
+
+@media(max-width:767px) {
+    .about-section .holder .half:first-child {
+        width: 100%;
+    }
+}
+
+.about-section .holder .half:last-child {
+    width: 50%;
+    padding: 40px 20px 40px 5%;
+    background-color: var(--color-dark);
+}
+
+@media(max-width:767px) {
+    .about-section .holder .half:last-child {
+        width: 100%;
+    }
+}
+
+.about-section .holder .half:last-child h1 {
+    font-weight: bold;
+    color: white;
+}
+
+.about-section .holder .half:last-child p {
+    color: white;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.about-section .holder .half:last-child .important {
+    font-weight: bold;
+}
+
+/* end about-section */
+
+
+/* start minu-section */
+.minu-section {
+    background-color: var(--color-dark);
+    padding-top: 60px;
+}
+
+.minu-section h1 {
+    text-align: center;
+    display: block;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.minu-section .holder {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+}
+
+
+
+.minu-section .holder a {
+    max-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media(max-width:991px) {
+    .minu-section .holder {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+}
+
+@media(max-width:767px) {
+    .minu-section .holder {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .minu-section .holder a {
+        max-height: 500px;
+    }
+}
+
+@media(max-width:577px) {
+    .minu-section .holder {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .minu-section .holder a {
+        max-height: 500px;
+    }
+}
+
+.minu-section .holder a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #333333a4;
+    opacity: 0;
+    transition: var(--tr-3);
+}
+
+.minu-section .holder a:hover::before {
+    opacity: 1;
+}
+
+.minu-section .holder a img {
+    width: 100%;
+}
+
+.minu-section .holder a i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: var(--tr-3);
+    color: white;
+    font-size: 60px;
+}
+
+.minu-section .holder a:hover i {
+    opacity: 1;
+}
+
+/* end minu-section */
+
+/* start book-section */
+.book-section {
+    min-height: 60vh;
+    background: url(../imgs/book-table-img.jpg);
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.book-section::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #333333bf;
+    z-index: 2;
+}
+
+
+.book-section h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 3;
+}
+
+.book-section form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    position: relative;
+    z-index: 3;
+    padding: 0 30px;
+}
+
+.book-section form input:not(:last-of-type) {
+    width: 24%;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 15px 10px;
+    color: white;
+    height: 55px;
+}
+
+@media(max-width:767px) {
+    .book-section form input:not(:last-of-type) {
+        width: 49%;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width:577px) {
+    .book-section form input:not(:last-of-type) {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.book-section form input:not(:last-of-type)::placeholder {
+    color: white;
+    font-size: 20px;
+}
+
+.book-section form input:last-of-type {
+    display: block;
+    width: fit-content;
+    margin-top: 30px;
+    background-color: var(--color-red);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 14px 28px;
+}
+
+.book-section form input:focus {
+    outline: none;
+}
+
+/* end book-section */
+
+/* start blog-section */
+.bolg-section {
+    min-height: 100vh;
+    background-color: var(--color-dark);
+    padding: 50px 30px;
+}
+
+.bolg-section h1 {
+    font-size: 40px;
+    display: block;
+    margin: 0 0 40px 0;
+    color: white;
+    text-align: center;
+}
+
+.bolg-section .controle {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.bolg-section .controle span {
+    padding: 8px 30px;
+    font-size: 18px;
+    color: var(--color-red);
+    background-color: var(--color-dark);
+    border-radius: 5px;
+    transition: var(--tr-3);
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.bolg-section .controle span:hover {
+    border-color: var(--color-red);
+}
+
+.bolg-section .controle span.active {
+    background-color: var(--color-red);
+    color: white;
+}
+
+.bolg-section .holder {
+    min-height: 100vh;
+    width: 100%;
+
+
+}
+
+.bolg-section .holder .slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    gap: 5%;
+    opacity: 1;
+    flex-wrap: wrap;
+}
+
+.bolg-section .holder .slide.hidden {
+    opacity: 0;
+}
+
+.bolg-section .holder .slide.active {
+    display: flex;
+}
+
+.bolg-section .holder .slide .item {
+    width: 30%;
+    border: 0.5px solid gray;
+}
+
+@media(max-width:991px) {
+    .bolg-section .holder .slide .item {
+        width: 45%;
+        margin-bottom: 30px;
+        align-self: center;
+    }
+}
+
+@media(max-width:767px) {
+    .bolg-section .holder .slide .item {
+        width: 100%;
+        margin-bottom: 30px;
+        align-self: center;
+    }
+}
+
+.bolg-section .holder .slide .item .image {
+    width: 100%;
+    min-height: 200px;
+}
+
+.bolg-section .holder .slide .item .image img {
+    width: 100%;
+
+}
+
+.bolg-section .holder .slide .item .price {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    padding: 5px 15px;
+    background-color: var(--color-red);
+    border-radius: 5px;
+}
+
+.bolg-section .holder .slide .item .name {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.bolg-section .holder .slide .item p {
+    text-align: center;
+    line-height: 1.5;
+    color: white;
+    padding: 0 10px;
+    margin-bottom: 20px;
+
+}
+
+/* end blog-section */
+
+/* start review-section */
+.review-section {
+    min-height: 80vh;
+    background-color: var(--color-dark);
+    padding-bottom: 30px;
+}
+
+.review-section h1 {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 0;
+    display: block;
+}
+
+.review-section .holder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 10px auto;
+    padding: 0 15px;
+    column-gap: 30px;
+}
+
+@media(max-width:767px) {
+    .review-section .holder {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 10px;
+    }
+}
+
+.review-section .holder .item span:first-child {
+    display: block;
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.review-section .holder .item span:last-of-type {
+    display: block;
+    color: white;
+    text-align: center;
+    margin: 0px 0 40px;
+}
+
+.review-section .holder .item p {
+    color: white;
+    line-height: 1.7;
+    text-align: center;
+    border: 1px solid;
+    border-top: 2px solid var(--color-red);
+    border-color: var(--color-red) gray gray;
+    padding: 10px;
+    position: relative;
+
+}
+
+.review-section .holder .item p::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 2px solid;
+    border-color: var(--color-red) transparent transparent var(--color-red);
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    background-color: var(--color-dark);
+    transform: rotate(45deg);
+    top: -15px;
+}
+
+/* end review-section */
+
+/* strat location-section */
+.location-section {
+    display: flex;
+    background-color: var(--color-dark);
+    border: 1px solid;
+    border-color: gray transparent;
+}
+
+.location-section .half:first-child {
+    width: 50%;
+}
+
+.location-section .half:last-child {
+    min-height: 80vh;
+    width: 50%;
+    padding: 0 20px;
+}
+
+.location-section .half:last-child>span {
+    margin-top: 20%;
+    display: block;
+    font-size: 40px;
+    color: white;
+    font-weight: 600;
+}
+
+.location-section .half:last-child p {
+    color: white;
+    line-height: 1.5;
+}
+
+.location-section .half:last-child div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.location-section .half:last-child div i {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(176, 175, 175);
+}
+
+.location-section .half:last-child div>span {
+    color: rgb(176, 175, 175);
+    font-weight: 600;
+
+}
+
+/* end location-section */
+
+
+/* start contact-section */
+.contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 15px;
+    background-color: var(--color-dark);
+}
+
+@media(max-width:767px) {
+    .contact-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.contact-section div {
+    width: 33%;
+}
+
+@media(max-width:767px) {
+    .contact-section div {
+        width: 100%;
+    }
+}
+
+.contact-section div>span:first-child {
+    display: block;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 60px;
+}
+
+.contact-section div>span:last-child {
+    color: gray;
+    display: block;
+    text-align: center;
+    height: 50px;
+}
+
+/* end contact-section */
+
+
+/* start footer */
+footer {
+    background-color: var(--color-dark);
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid gray;
+}
+
+footer span {
+    color: gray;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+footer span a {
+    color: var(--color-red);
+    font-size: 14px;
+}
+
+/* end footer */
